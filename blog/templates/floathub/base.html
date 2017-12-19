@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+
 <html lang="en">
 
 <head>
@@ -33,32 +34,16 @@
 
 <body id="home">
   <div class="home-background" id="page-container">
+
     <!-- The Modal -->
     <div id="id01" class="modal">
-      <!-- Modal Content -->
-      <form id="lform" class="modal-content animate text-primary" action="/action_page.php">
-        <!-- <div class="imgcontainer">
-        <img src="img_avatar2.png" alt="Avatar" class="avatar">
-      </div> -->
-
-      <div class="container">
-        <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
-
-        <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-
-        <button type="submit" class="btn btn-secundary">Login</button>
-        <button type="button" class="btn btn-primary" onclick="document.getElementById('id01').style.display='none'">Cancel</button>
-        <span class="psw"><a href="#">Forgot your password?</a></span>
-      </div>
-    </form>
-  </div>
+        {% include "floathub/login.html" %}
+    </div>
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="Nav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="home"><img src="{% static 'img/Floathub.png' %}" alt="floathub"></a>
+      <a class="navbar-brand js-scroll-trigger" href="/home/"><img src="{% static 'img/Floathub.png' %}" alt="floathub"></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -66,7 +51,7 @@
         <ul class="navbar-nav ml-auto">
 
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="Notes">Notes</a>
+            <a class="nav-link js-scroll-trigger" href="/notes/">Notes</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#">Contact</a>
@@ -85,7 +70,8 @@
       </textarea>
       <div class="row bottom-buffer">
         {% block content %}
-          {% for post in posts %}
+        <p> Default </p>
+          <!-- {% for post in posts %}
               <div class="col-lg-4 col-sm-6 top-buffer">
                 <div class="card text-muted m-1">
                   <div class="card-block">
@@ -97,7 +83,7 @@
                   </div>
                 </div>
               </div>
-          {% endfor %}
+          {% endfor %} -->
         {% endblock %}
       </div>
     </div>
