@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
 
 <head>
@@ -11,20 +12,21 @@
   <title>Floathub home</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- <link rel="stylesheet" href="{% static 'css/blog.css' %}"> -->
+  <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
   <!-- Plugin CSS -->
-  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="{% static 'vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/creative.css" rel="stylesheet">
-  <link href="css/login.css" rel="stylesheet">
+  <link href="{% static 'css/creative.css' %}" rel="stylesheet">
+  <link href="{% static 'css/login.css' %}" rel="stylesheet">
 
 
 </head>
@@ -56,7 +58,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="Nav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="index.html"><img src="img/Floathub.png" alt="floathub"></a>
+      <a class="navbar-brand js-scroll-trigger" href="home"><img src="{% static 'img/Floathub.png' %}" alt="floathub"></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -64,7 +66,7 @@
         <ul class="navbar-nav ml-auto">
 
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#explore.html">Home</a>
+            <a class="nav-link js-scroll-trigger" href="Notes">Notes</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#">Contact</a>
@@ -82,35 +84,35 @@
       <textarea class="note-bar top-buffer" placeholder="What's on your mind?">
       </textarea>
       <div class="row bottom-buffer">
-
-        {% for post in posts %}
-            <div class="col-lg-4 col-sm-6 top-buffer">
-              <div class="card text-muted m-1">
-                <div class="card-block">
-                  <h4 class="card-title">{{ post.title }}</h4>
-                  <p class="card-text">{{ post.text|linebreaksbr }}</p>
-                  <div class="card-footer">
-                    <small class="text-muted">{{ post.published_date }}</small>
+        {% block content %}
+          {% for post in posts %}
+              <div class="col-lg-4 col-sm-6 top-buffer">
+                <div class="card text-muted m-1">
+                  <div class="card-block">
+                    <h4 class="card-title">{{ post.title }}</h4>
+                    <p class="card-text">{{ post.text|linebreaksbr }}</p>
+                    <div class="card-footer">
+                      <small class="text-muted">{{ post.published_date }}</small>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-        {% endfor %}
-
+          {% endfor %}
+        {% endblock %}
       </div>
     </div>
   </div>
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
-  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'vendor/scrollreveal/scrollreveal.min.js' %}"></script>
+  <script src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="js/main.js"></script>
+  <script src="{% static 'js/main.js' %}"></script>
 </div>
 </body>
 
