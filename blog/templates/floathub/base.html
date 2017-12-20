@@ -37,23 +37,27 @@
 
     <!-- The Modal -->
     <div id="id01" class="modal">
-        {% include "floathub/login.html" %}
+      {% include "floathub/login.html" %}
     </div>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="Nav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="/home/"><img src="{% static 'img/Floathub.png' %}" alt="floathub"></a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="Nav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/home/"><img src="{% static 'img/Floathub.png' %}" alt="floathub"></a>
 
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="/notes/">Notes</a>
-          </li>
-          <!-- <li class="nav-item">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/notes/">Notes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'post_new' %}">NEW</span></a>
+            </li>
+            <!-- <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#">Contact</a>
           </li> -->
           <li class="nav-item">
@@ -66,25 +70,18 @@
 
   <div class="card-group" id="cardspage">
     <div class="container-fluid">
-      <textarea class="note-bar top-buffer" placeholder="What's on your mind?">
-      </textarea>
+      {% block newpost %}
+          <!-- <form method="POST" class="post-form">{% csrf_token %}
+            <input type="text" class="note-title top-buffer" placeholder="Title" id="titlefield" name="titlefield" required>
+            <textarea class="note-text top-buffer" placeholder="What's on your mind?" id="postfield" name="postfield" required></textarea>
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-secundary">Post</button>
+            <button type="reset" class="btn btn-primary" onclick="document.getElementById('postfield').value =''; document.getElementById('titlefield').value =''">Cancel</button>
+          </form> -->
+      {% endblock %}
+
       <div class="row bottom-buffer">
-        {% block content %}
-        <p> Default </p>
-          <!-- {% for post in posts %}
-              <div class="col-lg-4 col-sm-6 top-buffer">
-                <div class="card text-muted m-1">
-                  <div class="card-block">
-                    <h4 class="card-title">{{ post.title }}</h4>
-                    <p class="card-text">{{ post.text|linebreaksbr }}</p>
-                    <div class="card-footer">
-                      <small class="text-muted">{{ post.published_date }}</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          {% endfor %} -->
-        {% endblock %}
+        {% include "floathub/posts.html" %}
       </div>
     </div>
   </div>

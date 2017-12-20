@@ -6,5 +6,6 @@ urlpatterns = [
     #url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
     url(r'^home/$', views.home, name='home'),
     url(r'^notes/$', views.post_list, name='post_list'),
-    url(r'^login/$', views.post_list, name='post_list'),
+    url(r'^login/$', views.post_list, name='login'),
+    url(r'^post/new/$', views.post_new, name='post_new'),
 ]
