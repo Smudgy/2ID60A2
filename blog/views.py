@@ -13,7 +13,7 @@ def post_list(request):
         return render(request, 'floathub/base.html', {'posts': posts})
     else:
         posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-        return render(request, 'floathub/login.html', {})
+        return render(request, 'registration/login.html', {})
 
 
 def post_new(request):
@@ -29,10 +29,10 @@ def post_new(request):
         else:
             form = PostForm()
         return render(request, 'floathub/post_edit.html', {'form': form})
-    return render(request, 'floathub/login.html', {})
+    return render(request, 'registration/login.html', {})
 
 def login(request):
-    return render(request, 'floathub/login.html', {})
+    return render(request, 'registration/login.html', {})
 
 def home(request):
     return render(request, 'floathub/index.html', {})
