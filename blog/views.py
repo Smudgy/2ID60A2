@@ -5,6 +5,7 @@ from .forms import PostForm
 from django.shortcuts import redirect
 from django.contrib.auth.models import User
 from django.http import HttpResponse
+from django.contrib.auth import views as auth_views
 
 # Create your views here.
 def post_list(request):
@@ -13,7 +14,7 @@ def post_list(request):
         return render(request, 'floathub/base.html', {'posts': posts})
     else:
         posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-        return render(request, 'registration/login.html', {})
+        return auth_views.login(request)
 
 
 def post_new(request):
@@ -29,10 +30,10 @@ def post_new(request):
         else:
             form = PostForm()
         return render(request, 'floathub/post_edit.html', {'form': form})
-    return render(request, 'registration/login.html', {})
+    return auth_views.login(request)
 
 def login(request):
-    return render(request, 'registration/login.html', {})
+    return auth_views.login(request)
 
 def home(request):
     return render(request, 'floathub/index.html', {})
