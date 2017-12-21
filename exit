@@ -1,0 +1,83 @@
+[33mcommit 0d3ad60a185b8f45a21dffa7ac7b34651f9e6637[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: s147682 <tmrgast@live.nl>
+Date:   Thu Dec 21 23:17:53 2017 +0100
+
+    rest api
+
+[33mcommit ff28df04b113207e03b560dfeb18b93da0217949[m
+Author: s147682 <tmrgast@live.nl>
+Date:   Thu Dec 21 23:02:18 2017 +0100
+
+    ability to edit notes added
+
+[33mcommit 14d289047c4bb5bbe05a82b344f856f69a39dc30[m
+Author: s147682 <tmrgast@live.nl>
+Date:   Thu Dec 21 21:34:54 2017 +0100
+
+    login view changes
+
+[33mcommit 008e2b3b193b82bb60b42ac82c48e38cbfd5d2f7[m
+Author: s147682 <tmrgast@live.nl>
+Date:   Thu Dec 21 21:30:10 2017 +0100
+
+    Login working, ability to delete notes
+
+[33mcommit 3b28bc57140d99096bea599fc07b59e08c044b32[m
+Author: s147682 <tmrgast@live.nl>
+Date:   Thu Dec 21 21:05:43 2017 +0100
+
+    Ability to login, doesnt show posts when not logged in
+
+[33mcommit 99d6b2dbcbc537bf06634c4fc8821f10b2f01ba1[m
+Author: s147682 <tmrgast@live.nl>
+Date:   Wed Dec 20 21:17:08 2017 +0100
+
+    more bug fixes
+
+[33mcommit 9b61daa01689ed6af67b1c4e4201034354aaad16[m
+Author: s147682 <tmrgast@live.nl>
+Date:   Wed Dec 20 21:12:20 2017 +0100
+
+    removed need to be a user to add notes
+
+[33mcommit 67490bcd5e9cbc191fcb67bf8e4b3ae302fc71b6[m
+Author: s147682 <tmrgast@live.nl>
+Date:   Wed Dec 20 21:08:42 2017 +0100
+
+    fix on user error
+
+[33mcommit 3b2000ecf559afbccf1a6fd5d9324808d7a74855[m
+Author: s147682 <tmrgast@live.nl>
+Date:   Wed Dec 20 21:02:58 2017 +0100
+
+    Form setup, now able to add notes!
+
+[33mcommit 3dd3c232db8d9fd3bb3ae41bdd387cc3d8ed4074[m
+Author: s147682 <tmrgast@live.nl>
+Date:   Tue Dec 19 17:29:24 2017 +0100
+
+    view templates and html changes
+
+[33mcommit f0a39cd559fc49c6f774b889bc662376837c4883[m
+Author: s147682 <tmrgast@live.nl>
+Date:   Tue Dec 19 15:49:42 2017 +0100
+
+    html changes
+
+[33mcommit aab791a9f93cd06ac95b1cdb94e94de981aba450[m
+Author: s147682 <tmrgast@live.nl>
+Date:   Tue Dec 19 15:00:21 2017 +0100
+
+    modified templates and html
+
+[33mcommit f0cba81b1f6b5ee8c6e4917d0e84c1c1dd8c7309[m
+Author: s147682 <tmrgast@live.nl>
+Date:   Tue Dec 19 14:26:42 2017 +0100
+
+    html added floathub
+
+[33mcommit 739c930edec977b0eb30ebfb9030cc38bd00b48f[m
+Author: s147682 <tmrgast@live.nl>
+Date:   Mon Dec 18 13:10:44 2017 +0100
+
+    My app, first commit

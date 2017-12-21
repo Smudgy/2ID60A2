@@ -38,7 +38,25 @@ def home(request):
     return render(request, 'floathub/index.html', {})
 
 def delete_post(request,id):
-   #+some code to check if New belongs to logged in user
    u = Post.objects.get(pk=id).delete()
    posts = Post.objects.filter(author=request.user).filter(published_date__lte=timezone.now()).order_by('-published_date')
    return render(request, 'floathub/base.html', {'posts': posts})
+
+def edit_post(request,id):
+    u = Post.objects.get(pk=id)
+
+    if request.user.is_authenticated():
+        if request.method == "POST":
+            form = PostForm(request.POST)
+            if form.is_valid():
+                post = form.save(commit=False)
+                post.author = request.user
+                post.published_date = timezone.now()
+                post.save()
+                u.delete()
+                return redirect('/notes/', pk=post.pk)
+
+
+    form = PostForm(instance=u)
+
+    return render(request, 'floathub/edit.html', {'form': form, 'u': u})
