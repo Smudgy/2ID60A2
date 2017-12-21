@@ -1,9 +1,10 @@
 {% extends 'floathub/base.html' %}
 
 {% block newpost %}
-    <form method="POST" class="post-form">{% csrf_token %}
-      <input type="text" class="note-title top-buffer" placeholder="Title" id="titlefield" name="title" required>
-      <textarea class="note-text top-buffer" placeholder="What's on your mind?" id="postfield" name="text" required></textarea>
+    <form method="POST" class="post-form text-primary top-buffer">{% csrf_token %}
+      {{ form }}
+      <!-- <input type="text" class="note-title" placeholder="Title" id="titlefield" name="title" required>
+      <textarea class="note-text" placeholder="What's on your mind?" id="postfield" name="text" required></textarea> -->
       <button type="submit" class="save btn btn-secundary">Post</button>
       <button type="reset" class="btn btn-primary" onclick="document.getElementById('postfield').value =''; document.getElementById('titlefield').value =''">Cancel</button>
 

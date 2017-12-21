@@ -1,0 +1,12 @@
+{% extends 'floathub/base.html' %}
+
+{% block newpost %}
+    <form method="POST" class="post-form text-primary top-buffer">{% csrf_token %}
+      {{ form }}
+      <!-- <input type="text" class="note-title" id="id_title" name="title" required>
+      <textarea class="note-text" id="id_text" name="text" required></textarea> -->
+    <br/>
+    <button type="submit" class="save btn btn-primary">SAVE</button>
+
+    </form>
+{% endblock %}
