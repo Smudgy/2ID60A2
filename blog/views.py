@@ -37,6 +37,8 @@ def login(request):
 def home(request):
     return render(request, 'floathub/index.html', {})
 
-def delete_new(request,id):
+def delete_post(request,id):
    #+some code to check if New belongs to logged in user
-   u = New.objects.get(pk=id).delete()
+   u = Post.objects.get(pk=id).delete()
+   posts = Post.objects.filter(author=request.user).filter(published_date__lte=timezone.now()).order_by('-published_date')
+   return render(request, 'floathub/base.html', {'posts': posts})

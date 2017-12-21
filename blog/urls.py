@@ -16,4 +16,5 @@ urlpatterns = [
     url(r'^login/$', auth_views.login, name='login'),
     url(r'^logout/$', auth_views.logout, {'template_name': 'home'}, name='logout'),
     url(r'^admin/', admin.site.urls, name='admin'),
+    url(r'^delete_post/(?P<id>\d+)/', views.delete_post, name='delete_post')
 ]

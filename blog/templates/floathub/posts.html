@@ -5,9 +5,13 @@
       <h4 class="card-title">{{ post.title }}</h4>
       <p class="card-text">{{ post.text|linebreaksbr }}</p>
       <div class="card-footer">
-        <small class="text-muted">{{ post.published_date }} <button type="button" class="close" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button></small>
+        <small class="text-muted">{{ post.published_date }}
+          <a href='/delete_post/{{post.id}}/'>
+            <button type="button" class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </a>
+        </small>
       </div>
     </div>
   </div>
