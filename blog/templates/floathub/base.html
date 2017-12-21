@@ -36,9 +36,9 @@
   <div class="home-background" id="page-container">
 
     <!-- The Modal -->
-    <div id="id01" class="modal">
-      {% include "floathub/login.html" %}
-    </div>
+
+    {% block login %} {% endblock %}
+
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="Nav">
@@ -61,41 +61,43 @@
             <a class="nav-link js-scroll-trigger" href="#">Contact</a>
           </li> -->
           <li class="nav-item">
-            <a class="nav-link" href="#" onclick="document.getElementById('id01').style.display='block'">Login</a>
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
+
+
   <div class="card-group" id="cardspage">
     <div class="container-fluid">
       {% block newpost %}
-          <!-- <form method="POST" class="post-form">{% csrf_token %}
-            <input type="text" class="note-title top-buffer" placeholder="Title" id="titlefield" name="titlefield" required>
-            <textarea class="note-text top-buffer" placeholder="What's on your mind?" id="postfield" name="postfield" required></textarea>
-            {{ form.as_p }}
-            <button type="submit" class="save btn btn-secundary">Post</button>
-            <button type="reset" class="btn btn-primary" onclick="document.getElementById('postfield').value =''; document.getElementById('titlefield').value =''">Cancel</button>
-          </form> -->
-      {% endblock %}
+      <!-- <form method="POST" class="post-form">{% csrf_token %}
+      <input type="text" class="note-title top-buffer" placeholder="Title" id="titlefield" name="titlefield" required>
+      <textarea class="note-text top-buffer" placeholder="What's on your mind?" id="postfield" name="postfield" required></textarea>
+      {{ form.as_p }}
+      <button type="submit" class="save btn btn-secundary">Post</button>
+      <button type="reset" class="btn btn-primary" onclick="document.getElementById('postfield').value =''; document.getElementById('titlefield').value =''">Cancel</button>
+    </form> -->
+    {% endblock %}
 
-      <div class="row bottom-buffer">
-        {% include "floathub/posts.html" %}
-      </div>
+    <div class="row bottom-buffer">
+      {% include "floathub/posts.html" %}
     </div>
   </div>
-  <!-- Bootstrap core JavaScript -->
-  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</div>
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
-  <script src="{% static 'vendor/scrollreveal/scrollreveal.min.js' %}"></script>
-  <script src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+<!-- Plugin JavaScript -->
+<script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+<script src="{% static 'vendor/scrollreveal/scrollreveal.min.js' %}"></script>
+<script src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
 
-  <!-- Custom scripts for this template -->
-  <script src="{% static 'js/main.js' %}"></script>
+<!-- Custom scripts for this template -->
+<script src="{% static 'js/main.js' %}"></script>
 </div>
 </body>
 

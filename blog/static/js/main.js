@@ -2,20 +2,15 @@
 var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+// window.onclick = function(event) {
+//     if (event.target == modal) {
+//         modal.style.display = "none";
+//     }
+// }
 
 //jQuery
 $(document).ready(() => {
   $('.blur').addClass("antiblur");
-
-  $( "#lform" ).submit(function( event ) {
-    alert( "hihi silly user, this function isn't working yet ;)" );
-    event.preventDefault();
-  });
 
   $( ".psw" ).on('click', () => {
     alert( "HA! dumbass.." );
@@ -30,7 +25,3 @@ $(document).ready(() => {
     $(event.currentTarget).addClass("text-muted");
   });
 });
-
-var titles = [];
-var notes = [];
-var dates = [];

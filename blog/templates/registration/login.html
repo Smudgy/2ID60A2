@@ -1,0 +1,17 @@
+{% extends 'floathub/base.html' %}
+<!-- Modal Content -->
+{% block login %}
+<div id="id01" class="modal">
+  <form class="modal-content animate text-primary" method="post">
+    {% csrf_token %}
+
+    <div class="container">
+      {{ form.as_p }}
+
+      <button type="submit" class="btn btn-secundary">Login</button>
+      <!-- <button type="button" class="btn btn-primary">Sign up</button>
+      <span class="psw"><a href="#">Forgot your password?</a></span> -->
+    </div>
+  </form>
+</div>
+{% endblock %}
